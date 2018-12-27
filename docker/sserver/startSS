@@ -1,0 +1,36 @@
+#!/bin/sh
+
+WORKDIR="/shadowsocket"
+mkdir -p $WORKDIR
+
+DEFAULT_CONFIG="$WORKDIR/config.json"
+SS_CONFIG=${SS_CONFIG:-$1}
+SS_CONFIG=${SS_CONFIG:-$DEFAULT_CONFIG}
+
+SS_SERVER_PORT=${SS_SERVER_PORT:-8838}
+SS_LOCAL_PORT=${SS_LOCAL_PORT:-1080}
+SS_PASSWORD=${SS_PASSWORD:-"asto!@#123456"}
+SS_METHOD=${SS_METHOD:-"aes-256-cfb"}
+SS_WORKERS=${SS_WORKERS:-1}
+SS_FAST_OPEN=${SS_FAST_OPEN:-false}
+
+cat > $SS_CONFIG << EOF
+{
+	"server":"0.0.0.0",
+	"server_port":${SS_SERVER_PORT},
+	"local_address":"127.0.0.1",
+	"local_port":${SS_LOCAL_PORT},
+	"password":"${SS_PASSWORD}",
+	"timeout":300,
+	"method":"${SS_METHOD}",
+	"fast_open":${SS_FAST_OPEN},
+	"workers": ${SS_WORKERS}
+}
+EOF
+
+
+ssserver -c $SS_CONFIG -d start
+
+while true; do
+	sleep 60
+done
