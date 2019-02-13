@@ -13,6 +13,6 @@
 #
 
 
-docker build -t jiulongzaitian/centos-7.4.1708-go-1.10.2 .
+docker build -t jiulongzaitian/centos-7.4.1708-go-1.10.2:latest  --force-rm .
 
-docker push jiulongzaitian/centos-7.4.1708-go-1.10.2
+docker push jiulongzaitian/centos-7.4.1708-go-1.10.2:latest
