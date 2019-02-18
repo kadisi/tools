@@ -31,3 +31,16 @@
 FROM jiulongzaitian/centos-7.4.1708-go-1.10.2:base
 
 RUN echo "set encoding=utf-8" >> /root/.vimrc &&  echo "set termencoding=utf-8" >> /root/.vimrc
+
+RUN go get -u github.com/LK4D4/vndr
+
+RUN yum install epel-release -y
+
+# 生成ascii 艺术字
+RUN yum install figlet -y
+
+RUN go get -u github.com/stevvooe/protobuild
+
+RUN yum install -y unzip zip
+
+RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip && unzip protoc-3.6.1-linux-x86_64.zip -d /usr/local/ && rm -rf protoc-3.6.1-linux-x86_64.zip
