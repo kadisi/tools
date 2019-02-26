@@ -46,3 +46,8 @@ RUN yum install -y unzip zip
 RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip && unzip protoc-3.6.1-linux-x86_64.zip -d /usr/local/ && rm -rf protoc-3.6.1-linux-x86_64.zip
 
 RUN go get -u -v github.com/kardianos/govendor
+
+RUN go get github.com/gogo/protobuf/proto
+RUN go get github.com/gogo/protobuf/jsonpb
+RUN go get github.com/gogo/protobuf/protoc-gen-gogo
+RUN go get github.com/gogo/protobuf/gogoproto
