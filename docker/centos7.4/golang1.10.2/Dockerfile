@@ -51,3 +51,4 @@ RUN go get github.com/gogo/protobuf/proto
 RUN go get github.com/gogo/protobuf/jsonpb
 RUN go get github.com/gogo/protobuf/protoc-gen-gogo
 RUN go get github.com/gogo/protobuf/gogoproto
+RUN go get github.com/tools/godep
