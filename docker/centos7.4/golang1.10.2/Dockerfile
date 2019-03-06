@@ -43,7 +43,7 @@ RUN go get -u github.com/stevvooe/protobuild
 
 RUN yum install -y unzip zip
 
-RUN wget https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protoc-3.6.1-linux-x86_64.zip && unzip protoc-3.6.1-linux-x86_64.zip -d /usr/local/ && rm -rf protoc-3.6.1-linux-x86_64.zip
+RUN wget  https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3.5.1-linux-x86_64.zip && unzip protoc-3.5.1-linux-x86_64.zip -d /usr/local/ && rm -rf protoc-3.5.1-linux-x86_64.zip
 
 RUN go get -u -v github.com/kardianos/govendor
 
