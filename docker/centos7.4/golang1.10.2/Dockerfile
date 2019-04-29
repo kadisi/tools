@@ -54,3 +54,4 @@ RUN go get github.com/gogo/protobuf/gogoproto
 RUN go get github.com/tools/godep
 RUN go get github.com/onsi/ginkgo/ginkgo
 RUN yum install hg-git -y 
+RUN go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
