@@ -21,3 +21,4 @@ RUN go get github.com/gogo/protobuf/gogoproto
 RUN go get github.com/golang/dep
 RUN yum install hg-git -y 
 RUN go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+RUN go get github.com/onsi/ginkgo
